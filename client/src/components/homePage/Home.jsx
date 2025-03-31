@@ -11,17 +11,17 @@ export default function Home() {
                     <li>
                         <h3>Trainings</h3>
                         <img src="images/gym.jpg" alt="Training" />
-                        <Link to="services/:category"><button>Show more</button></Link>
+                        <Link to="services/Trainings"><button>Show more</button></Link>
                     </li>
                     <li>
                         <h3>Spa Zone</h3>
                         <img src="https://fitnessline.bg/images/media/fitness_crio/2/Fitnessline%20(403%20of%20461).jpg" alt="" />
-                        <Link to="services/:category"><button>Show more</button></Link>
+                        <Link to="services/Spa zone"><button>Show more</button></Link>
                     </li>
                     <li>
                         <h3>Massages</h3>
                         <img src="images/massage.jpg" alt="Massages" />
-                        <Link to="services/:category"><button>Show more</button></Link>
+                        <Link to="services/Massages"><button>Show more</button></Link>
                     </li>
                 </ul>
             </div>
