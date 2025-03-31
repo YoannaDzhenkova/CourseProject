@@ -10,7 +10,7 @@ export default {
 
         return services;
     },
-    
+
     getOne(serviceId) {
         return request.get(`${baseUrl}/${serviceId}`);
     },
@@ -18,4 +18,9 @@ export default {
     create(data) {
         return request.post(baseUrl,data);
     },
+
+    edit(serviceId, serviceData) {
+        return request.put(`${baseUrl}/${serviceId}`,{...serviceData, _id: serviceId});
+    },
+
 }
