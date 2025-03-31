@@ -1,0 +1,241 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url('./images/fitnessline.jpg');
+    background-attachment: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+header {  
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.header {
+    display: flex;
+    gap: 4em;
+    align-items: center;
+    justify-content: center;
+}
+
+header img{
+    background-image: url('images/images\ \(1\).jpg');
+    width: 90px;
+    margin-top: 0.5em;
+}
+
+header .title {
+    color: #29303c;
+    text-decoration: none;
+    font-size: 5em;
+}
+
+
+header .navigation {
+    background: #29303c;
+    padding: 1.5em;
+    margin: 2em;
+    border-radius: 2em;
+    font-weight: bold;
+    align-self: center;
+    width: 50%;
+}
+
+.navigation nav div {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.navigation a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.new-services {
+    background-color: #1e2430;
+    color: #fff;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.new-services h1 {
+    font-size: 3em;
+}
+
+.new-services ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3em;
+    padding: 3em;
+}
+
+.new-services li {
+    list-style-type: none;
+    background-color: #3e495c;
+    width: 50%;
+    border-radius: 1em;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    padding: 1em;
+}
+
+.new-services li h3 {
+    font-size: 2em
+}
+
+.new-services li img {
+    width: 300px;
+    height: 300px;
+}
+
+.new-services li a button {
+    padding: 1em;
+    border-radius: 1em;
+    border: none;
+    color: #29303c;
+    font-weight: bold;
+}
+
+#about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+    padding: 2em;
+    color: #29303c;
+    background-color: #fff;
+}
+
+#about h1 {
+    font-size: 4em;
+}
+
+#about h3 {
+    font-size: 3em;
+}
+
+
+
+#about p.about {
+    font-size: 2em;
+    text-align: center;
+    width: 50%;
+}
+
+.system {
+    display: flex;
+    width: 60%;
+    margin-top: 3em;
+    border: 1px solid #29303c;
+    padding: 2em 4em;
+    border-radius: 2em;
+}
+
+.system h4 {
+    font-size: 30px;
+    margin-bottom: 2em;
+}
+
+.system p {
+    width: 50%;
+    font-size: 20px;
+}
+
+#contact {
+    background-image: url('../images/fitnessline.jpg');
+    background-attachment: center;
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 120vh;
+    padding-right: 6em;
+}
+
+.contact-form {
+    background: #fff;
+    padding: 3em;
+    padding-right: 3em;
+    border-radius: 1em;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-form h2 {
+    text-align: center;
+    color: #29303c;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 400px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: inset 6px 6px 6px #c0c2c5, inset -6px -6px 6px white;
+}
+
+.form-group textarea {
+    height: 100px;
+}
+
+.submit-btn {
+    width: 100%;
+    background: #29303c;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.submit-btn:hover {
+    background: #465266;
+}
+
+footer {
+    background-color: #29303c;
+}
+
+footer ul {
+    display: flex;
+    padding: 1em;
+    list-style-type: none;
+    color: #fff;
+    justify-content: center;
+    gap: 2em;
+}
