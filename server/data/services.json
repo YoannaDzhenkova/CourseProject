@@ -1,0 +1,30 @@
+{
+    "df721ad1-a2f0-4d18-a77a-33b13a1127ae": {
+        "title": "test",
+        "category": "test",
+        "imageUrl": "https://media.istockphoto.com/id/1370717279/photo/woman-in-autumn-countryside-taking-photo-on-retro-style-digital-camera-to-post-to-social-media.jpg?s=612x612&w=is&k=20&c=1SmjGTM_OM5OkO9MbFF-NTqM48PBc35I6SAGWfN5sVY=",
+        "summary": "test",
+        "_id": "df721ad1-a2f0-4d18-a77a-33b13a1127ae"
+    },
+    "beec7a7e-6ca6-4e1b-8353-9cfa6f864049": {
+        "title": "Aerobics",
+        "category": "Trainings",
+        "imageUrl": "https://images.ctfassets.net/4f3rgqwzdznj/4RhNlPxGDxslNljmLS2dSr/4cbaf720cebc89659c513215f6581233/GettyImages-1195045259.jpg",
+        "summary": "Aerobics is a form of physical exercise that combines rhythmic aerobic exercise with stretching and strength training routines with the goal of improving all elements of fitness (flexibility, muscular strength, and cardio-vascular fitness).",
+        "_id": "beec7a7e-6ca6-4e1b-8353-9cfa6f864049"
+    },
+    "d0876f3e-1d7e-4cd1-b0b7-b20c96ed0005": {
+        "title": "Tae Bo",
+        "category": "Trainings",
+        "imageUrl": "https://i.ebayimg.com/images/g/1CgAAOxy~iJQ9fTc/s-l640.jpg",
+        "summary": "taebo",
+        "_id": "d0876f3e-1d7e-4cd1-b0b7-b20c96ed0005"
+    },
+    "ac18d0b3-39ed-4a5c-a314-31874c2698c3": {
+        "title": "Full Body Massage",
+        "category": "Massages",
+        "imageUrl": "https://www.health.com/thmb/3x2SXCdrwYCun8rme7nUiG3PzMU=/5760x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1175433234-034014dc5b9c45edaeaf04c7b80ceafc.jpg",
+        "summary": "A full body massage will typically include the back, legs, arms, head, shoulders, and feet. Some providers may also offer a glute massage as part of your full-body treatment, but you'll be able to discuss this with your therapist beforehand if you'd rather opt out.",
+        "_id": "ac18d0b3-39ed-4a5c-a314-31874c2698c3"
+    }
+}
