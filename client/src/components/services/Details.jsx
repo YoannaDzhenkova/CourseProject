@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router";
 import servicesApi from "../../api/servicesApi";
+import reviewsApi from "../../api/reviewsApi";
 import ShowReviews from "../reviews/ShowReviews";
 import CreateReview from "../reviews/CreateReview";
 
@@ -8,6 +9,7 @@ export default function Details({
     email,
 }) {
     const [service, setService] = useState({});
+    const [reviews, setReviews] = useState([]);
     const { serviceId } = useParams();
     const navigate = useNavigate()
 
@@ -15,7 +17,8 @@ export default function Details({
 
         servicesApi.getOne(serviceId)
             .then(setService);
-        
+        reviewsApi.getAll(serviceId)
+            .then(setReviews)
 
     }, [serviceId]);
 
@@ -30,6 +33,11 @@ export default function Details({
 
         navigate('/services')
     }
+
+    const createReview = (newReview) => {
+        setReviews(state => [...state, newReview]);
+    }
+
 
     return (
         <>
@@ -46,7 +54,7 @@ export default function Details({
 
                         <p className="text">{service.summary}</p>
 
-                        <ShowReviews />
+                        <ShowReviews reviews={reviews} />
 
                         <div className="buttons">
                             <Link to={`/services/${serviceId}/edit`} className="button">Edit</Link>
@@ -54,7 +62,11 @@ export default function Details({
                         </div>
                     </div>
 
-                    <CreateReview/>
+                    <CreateReview
+                        email={email}
+                        serviceId={serviceId}
+                        onCreate={ createReview} 
+                    />
 
                 </section>
             </div>
