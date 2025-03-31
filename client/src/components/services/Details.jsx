@@ -1,9 +1,24 @@
-import { Link } from "react-router";
-
+import { useEffect, useState } from "react";
+import { Link, useNavigate, useParams } from "react-router";
+import servicesApi from "../../api/servicesApi";
 import ShowReviews from "../reviews/ShowReviews";
 import CreateReview from "../reviews/CreateReview";
 
-export default function Details() {
+export default function Details({
+    email,
+}) {
+    const [service, setService] = useState({});
+    const { serviceId } = useParams();
+    const navigate = useNavigate()
+
+    useEffect(() => {
+
+        servicesApi.getOne(serviceId)
+            .then(setService);
+        
+
+    }, [serviceId]);
+
 
     return (
         <>
@@ -13,17 +28,17 @@ export default function Details() {
                     <div className="info-section">
 
                         <div className="service-header">
-                            <img className="service-img" src='' />
-                            <h1>Title</h1>
-                            <p className="type">Category</p>
+                            <img className="service-img" src={service.imageUrl} />
+                            <h1>{service.title}</h1>
+                            <p className="type">{service.category}</p>
                         </div>
 
-                        <p className="text">Summary</p>
+                        <p className="text">{service.summary}</p>
 
                         <ShowReviews />
 
                         <div className="buttons">
-                            <Link to={'/services/serviceId/edit'} className="button">Edit</Link>
+                            <Link to={`/services/${serviceId}/edit`} className="button">Edit</Link>
                             <button className="button">Delete</button>
                         </div>
                     </div>

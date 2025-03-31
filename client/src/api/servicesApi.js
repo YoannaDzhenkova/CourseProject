@@ -10,6 +10,11 @@ export default {
 
         return services;
     },
+    
+    getOne(serviceId) {
+        return request.get(`${baseUrl}/${serviceId}`);
+    },
+
     create(data) {
         return request.post(baseUrl,data);
     },
