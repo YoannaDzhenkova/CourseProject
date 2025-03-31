@@ -1,9 +1,22 @@
+import servicesApi from "../../api/servicesApi";
+import { useNavigate } from 'react-router';
+
 export default function Create() {
+    const navigate = useNavigate();
+
+    const submitAction = async (formData) => {
+        const data = Object.fromEntries(formData);
+
+        const result = await servicesApi.create(data);
+
+        navigate('/services')
+
+    }
     return (
         <>
             <div className="create">
                 <section id="create-page">
-                    <form id="create">
+                    <form id="create" action={submitAction}>
                         <div className="container">
 
                             <h1>Create Service</h1>
@@ -23,7 +36,7 @@ export default function Create() {
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor="service-img">Image:</label>
+                                <label htmlFor="game-img">Image:</label>
                                 <input type="text" id="imageUrl" name="imageUrl" placeholder="Upload a photo..." />
                             </div>
 
