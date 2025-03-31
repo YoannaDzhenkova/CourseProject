@@ -19,6 +19,17 @@ export default function Details({
 
     }, [serviceId]);
 
+    const onDelete = async () => {
+        const hasConfirm = confirm(`Are you sure you want to delete ${service.title} service?`);
+
+        if (!hasConfirm) {
+            return;
+        }
+
+        await servicesApi.delete(serviceId);
+
+        navigate('/services')
+    }
 
     return (
         <>
@@ -39,7 +50,7 @@ export default function Details({
 
                         <div className="buttons">
                             <Link to={`/services/${serviceId}/edit`} className="button">Edit</Link>
-                            <button className="button">Delete</button>
+                            <button onClick={onDelete} className="button">Delete</button>
                         </div>
                     </div>
 

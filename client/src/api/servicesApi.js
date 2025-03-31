@@ -23,4 +23,9 @@ export default {
         return request.put(`${baseUrl}/${serviceId}`,{...serviceData, _id: serviceId});
     },
 
+    
+    delete(serviceId) {
+        return request.delete(`${baseUrl}/${serviceId}`);
+    }
+
 }
