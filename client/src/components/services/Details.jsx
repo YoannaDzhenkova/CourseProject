@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router";
 import servicesApi from "../../api/servicesApi";
 import reviewsApi from "../../api/reviewsApi";
 import ShowReviews from "../reviews/ShowReviews";
 import CreateReview from "../reviews/CreateReview";
+import { UserContext } from "../../contexts/UserContext";
 
-export default function Details({
-    email,
-}) {
+export default function Details() {
+    const { email } = useContext(UserContext);
     const [service, setService] = useState({});
     const [reviews, setReviews] = useState([]);
     const { serviceId } = useParams();
