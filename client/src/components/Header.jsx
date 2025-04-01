@@ -1,7 +1,10 @@
+import { useContext } from 'react'
 import { Link } from 'react-router'
+import { UserContext } from '../contexts/UserContext'
 
 export default function Header() {
-    
+    const { email } = useContext(UserContext);
+
     return (
         <>
             <header>
@@ -12,16 +15,21 @@ export default function Header() {
                 </div>
                 <div className="navigation">
                     <nav>
-                        <div id="user">
-                            <Link to="/services">All services</Link>
-                            <Link to="/create">Create Service</Link>
-                            <Link to="/logout">Logout</Link>
-                        </div>
-                        <div id="guest">
-                    <Link to="/services">All services</Link>
-                    <Link to="/login">Login</Link>
-                    <Link to="/register">Register</Link>
-                </div>
+                        {email
+                            ? (<div id="user">
+                                <Link to="/services">All services</Link>
+                                <Link to="/create">Create Service</Link>
+                                <Link to="/logout">Logout</Link>
+                            </div>)
+                            : (
+                                <div id="guest">
+                                    <Link to="/services">All services</Link>
+                                    <Link to="/login">Login</Link>
+                                    <Link to="/register">Register</Link>
+                                </div>
+                            )}
+
+
                     </nav>
                 </div>
             </header>
