@@ -12,11 +12,11 @@ export default function Header() {
                 </div>
                 <div className="navigation">
                     <nav>
-                        {/* <div id="user">
+                        <div id="user">
                             <Link to="/services">All services</Link>
                             <Link to="/create">Create Service</Link>
                             <Link to="/logout">Logout</Link>
-                        </div> */}
+                        </div>
                         <div id="guest">
                     <Link to="/services">All services</Link>
                     <Link to="/login">Login</Link>

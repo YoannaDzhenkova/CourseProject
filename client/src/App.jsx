@@ -13,6 +13,7 @@ import Edit from './components/services/Edit'
 import { Route, Routes } from 'react-router'
 import { useState } from 'react'
 import Category from './components/category/Category'
+import Logout from './components/auth/Logout'
 
 function App() {
   const [userData, setUserData] = useState({});
@@ -32,7 +33,7 @@ function App() {
             <Route path='/services' element={<Services />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
-            <Route path='/logout' element={<Services />} />
+            <Route path='/logout' element={<Logout />} />
             <Route path='/create' element={<Create />} />
             <Route path='/services/:serviceId/edit' element={<Edit />} />
             <Route path='/services/:serviceId/details' element={<Details />} />
