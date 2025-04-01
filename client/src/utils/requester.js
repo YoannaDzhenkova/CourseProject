@@ -1,10 +1,6 @@
-export const request = async (method, url, data) => {
-    let options ={};
-
+export const request = async (method, url, data, options = {}) => {
     if(method !== 'GET') {
-        options = {
-            method,
-        };
+        options.method = method;
     }
 
     if(data) {
@@ -20,8 +16,6 @@ export const request = async (method, url, data) => {
 
     const response = await fetch(url, options);    
     const result = await response.json();
-
-    
 
     return result;
 }
