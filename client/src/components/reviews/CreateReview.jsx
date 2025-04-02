@@ -1,10 +1,13 @@
+import { useContext } from "react";
 import reviewsApi from "../../api/reviewsApi"
+import { ReviewsContext } from "../../contexts/ReviewsContext";
+import { UserContext } from "../../contexts/UserContext";
 
 export default function CreateReview({
-    email,
-    serviceId,
     onCreate
 }) {
+    const { email } = useContext(UserContext);
+    const {serviceId} = useContext(ReviewsContext)
     const reviewAction = async (formData) => {
         const review = formData.get('review')
 
