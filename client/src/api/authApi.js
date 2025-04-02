@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useEffect } from "react";
 import requester from "../utils/requester"
 import { UserContext } from "../contexts/UserContext";
 
@@ -6,9 +6,14 @@ const baseUrl = 'http://localhost:3030/users';
 
 export const useLogin = () => {
     const login = async (email, password) => {
-        const result = await requester.post(`${baseUrl}/login`, { email, password })
+        try {
+            const result = await requester.post(`${baseUrl}/login`, { email, password })
+            return result;
+        } catch (error) {
+            alert('Login failed! Please try again or check your details!')
+            return;
+        }
 
-        return result;
     }
 
     return {
@@ -40,7 +45,7 @@ export const useLogout = () => {
                 userLoginHandler({});
             })
     }, [accessToken])
-    
+
 
     return {
         isLoggedOut: !!accessToken,

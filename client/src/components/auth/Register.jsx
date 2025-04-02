@@ -11,11 +11,18 @@ export default function Register() {
     const registerHandler = async (formData) => {
         const { email, password, confirmPass } = Object.fromEntries(formData);
 
-        if (password !== confirmPass) {
-            console.log('Password missmatch');
+        if(!email || !password || !confirmPass) {
+            alert('All fields are required!')
+            
+            return;
+
+        } else if (password !== confirmPass) {
+            alert('Passwords must match!')
 
             return;
         }
+
+        
 
         const authData = await register(email, password);
         

@@ -1,11 +1,19 @@
+import { useContext } from "react";
 import servicesApi from "../../api/servicesApi";
 import { useNavigate } from 'react-router';
+import { UserContext } from "../../contexts/UserContext";
 
 export default function Create() {
     const navigate = useNavigate();
+    const { email } = useContext(UserContext);
 
     const submitAction = async (formData) => {
         const data = Object.fromEntries(formData);
+
+        if(email !== 'admin@abv.bg') {
+            alert("You don't have permission to add services!");
+            return;
+        }
 
         const result = await servicesApi.create(data);
 

@@ -8,8 +8,8 @@ export default function Login() {
     const {userLoginHandler} = useContext(UserContext);
     const { login } = useLogin();
     const loginHandler = async (_, formData) => {
+        
         const values = Object.fromEntries(formData);
-
         const userData = await login(values.email, values.password);
 
         userLoginHandler(userData);
