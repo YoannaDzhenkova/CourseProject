@@ -76,6 +76,7 @@
 }
 
 
+
 .buttons {
     height: 10%;
     text-align: right;
@@ -84,6 +85,10 @@
     display: flex;
     justify-content: end;
     gap: 1em;
+}
+.buttons button{
+    border: none;
+    font-weight: lighter;
 }
 
 .button {
@@ -98,7 +103,7 @@
 }
 
 .button:hover {
-    background-color: #6f5d9c;
+    background-color: #424e62;
     color: white;
 }
 

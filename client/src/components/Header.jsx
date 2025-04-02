@@ -18,7 +18,9 @@ export default function Header() {
                         {email
                             ? (<div id="user">
                                 <Link to="/services">All services</Link>
-                                <Link to="/create">Create Service</Link>
+                                {email === 'admin@abv.bg' && (
+                                    <Link to="/create">Create Service</Link>
+                                )}
                                 <Link to="/logout">Logout</Link>
                             </div>)
                             : (

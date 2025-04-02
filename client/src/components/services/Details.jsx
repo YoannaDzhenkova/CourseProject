@@ -56,17 +56,23 @@ export default function Details() {
 
                         <ShowReviews reviews={reviews} />
 
-                        <div className="buttons">
-                            <Link to={`/services/${serviceId}/edit`} className="button">Edit</Link>
-                            <button onClick={onDelete} className="button">Delete</button>
-                        </div>
+                        {email === 'admin@abv.bg' && (
+                            <div className="buttons">
+                                <Link to={`/services/${serviceId}/edit`} className="button">Edit</Link>
+                                <button onClick={onDelete} className="button">Delete</button>
+                            </div>
+                        )}
+
                     </div>
 
-                    <CreateReview
+                    {email !== 'admin@abv.bg' && email && (
+                        <CreateReview
                         email={email}
                         serviceId={serviceId}
-                        onCreate={ createReview} 
+                        onCreate={createReview}
                     />
+                    )}
+                    
 
                 </section>
             </div>

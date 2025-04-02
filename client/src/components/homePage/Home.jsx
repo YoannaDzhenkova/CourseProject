@@ -6,7 +6,7 @@ export default function Home() {
     return (
         <>
             <div className="new-services">
-                <h1>Services</h1>
+                <h1>Service categories</h1>
                 <ul>
                     <li>
                         <h3>Trainings</h3>

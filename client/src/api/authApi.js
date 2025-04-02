@@ -1,22 +1,15 @@
-import { useEffect, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import requester from "../utils/requester"
+import { UserContext } from "../contexts/UserContext";
 
 const baseUrl = 'http://localhost:3030/users';
 
 export const useLogin = () => {
-    const abortRef = useRef();
-
     const login = async (email, password) => {
-        const result = await requester.post(`${baseUrl}/login`, { email, password }, {signal: abortRef.current.signal})
-    
+        const result = await requester.post(`${baseUrl}/login`, { email, password })
+
         return result;
     }
-
-    useEffect(() => {
-        const abortController = new AbortController();
-        abortRef.current = abortController;
-        return () => abortController.abort();
-    }, []);
 
     return {
         login,
@@ -24,10 +17,32 @@ export const useLogin = () => {
 }
 
 export const useRegister = () => {
-    const register = (email, password) => 
-        requester.post(`${baseUrl}/register`, { email, password});
-    
+    const register = (email, password) =>
+        requester.post(`${baseUrl}/register`, { email, password });
+
     return {
         register,
+    }
+}
+
+export const useLogout = () => {
+    const { accessToken, userLoginHandler } = useContext(UserContext);
+
+    useEffect(() => {
+        const options = {
+            headers: {
+                'X-Authorization': accessToken,
+            }
+        };
+
+        requester.get(`${baseUrl}/logout`, null, options)
+            .then(() => {
+                userLoginHandler({});
+            })
+    }, [accessToken])
+    
+
+    return {
+        isLoggedOut: !!accessToken,
     }
 }

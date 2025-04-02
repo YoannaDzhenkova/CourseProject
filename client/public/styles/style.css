@@ -5,8 +5,11 @@
 @import "login-register.css";
 @import "create-edit.css"; 
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+body{
+    font-family: Lato, sans-serif;
+}
 main {
-    /* height: 120vh; */
     background-image: url('../images/fitnessline.jpg');
     background-attachment: center;
     background-size: cover;
